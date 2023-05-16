@@ -1,0 +1,50 @@
+<html>
+<head>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['timeline']});
+		google.charts.setOnLoadCallback(drawChart);
+
+		function drawChart() {
+			var dataTable = new google.visualization.DataTable();
+
+			dataTable.addColumn({ type: 'string', id: 'Name' });
+			dataTable.addColumn({ type: 'string', id: 'Party' });
+			dataTable.addColumn({ type: 'string', id: 'style', role: 'style' });
+			dataTable.addColumn({ type: 'date', id: 'Start' });
+			dataTable.addColumn({ type: 'date', id: 'End' });
+			dataTable.addRows([
+[ 'Winston Churchill', 'Con', '#0087dc', new Date(1952, 1, 6), new Date(1955, 3, 5)],
+[ 'Anthony Eden', 'Con', '#0087dc', new Date(1955, 3, 6), new Date(1957, 0, 9)],
+[ 'Harold Macmillan', 'Con', '#0087dc', new Date(1957, 0, 10), new Date(1963, 9, 18)],
+[ 'Alec Douglas-Home', 'Con', '#0087dc', new Date(1963, 9, 19), new Date(1964, 9, 16)],
+[ 'Harold Wilson', 'Lab', '#dc241f', new Date(1964, 9, 16), new Date(1970, 5, 19)],
+[ 'Edward Heath', 'Con', '#0087dc', new Date(1970, 5, 19), new Date(1974, 2, 4)],
+[ 'Harold Wilson', 'Lab', '#dc241f', new Date(1974, 2, 31), new Date(1976, 3, 5)],
+[ 'James Callaghan', 'Lab', '#dc241f', new Date(1976, 3, 5), new Date(1979, 4, 4)],
+[ 'Margaret Thatcher', 'Con', '#0087dc', new Date(1979, 4, 4), new Date(1990, 10, 28)],
+[ 'John Major', 'Con', '#0087dc', new Date(1990, 10, 28), new Date(1997, 4, 2)],
+[ 'Tony Blair', 'Lab', '#dc241f', new Date(1997, 4, 2), new Date(2007, 5, 27)],
+[ 'Gordon Brown', 'Lab', '#dc241f', new Date(2007, 5, 27), new Date(2010, 4, 11)],
+[ 'David Cameron', 'Con', '#0087dc', new Date(2010, 4, 11), new Date(2016, 6, 13)],
+[ 'Theresa May', 'Con', '#0087dc', new Date(2016, 6, 13), new Date(2019, 6, 24)],
+[ 'Boris Johnson', 'Con', '#0087dc', new Date(2019, 5, 24), new Date(2020, 4, 16)]
+			]);
+
+			var chart = new google.visualization.Timeline(document.getElementById('timeline'));
+			chart.draw(dataTable);
+		}
+	</script>
+	<style>
+		h1 {
+			font-family: 'HelveticaNeue-Light', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+			font-weight: 100;
+		}
+	</style>
+</head>
+<body>
+	<h1>Queen Elizabeth II's Prime Ministers</h1>
+	<div id="endFilter_div"></div>
+	<div id="timeline" style="height:1080px"></div>
+</body>
+</html>
