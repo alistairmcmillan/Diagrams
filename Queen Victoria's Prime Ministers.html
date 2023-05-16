@@ -1,0 +1,54 @@
+<html>
+<head>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['corechart', 'controls', 'timeline']});
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+			var dataTable = new google.visualization.DataTable();
+
+			dataTable.addColumn({ type: 'string', id: 'Name' });
+			dataTable.addColumn({ type: 'string', id: 'Nothing' });
+			dataTable.addColumn({ type: 'string', id: 'style', role: 'style' });
+			dataTable.addColumn({ type: 'date', id: 'Start' });
+			dataTable.addColumn({ type: 'date', id: 'End' });
+			dataTable.addRows([
+[ 'William Lamb', 'Whig', '#ff7f00', new Date(1835, 3, 18), new Date(1841, 7, 30)], // ,2nd Viscount Melbourne
+[ 'Robert Peel', 'Con', '#0087dc', new Date(1841, 7, 30), new Date(1846, 5, 29)],
+[ 'John Russell', 'Whig', '#ff7f00', new Date(1846, 5, 30), new Date(1852, 1, 21)],
+[ 'Edward Smith-Stanley', 'Con', '#0087dc', new Date(1852, 1, 23), new Date(1852, 11, 17)], // , 14th Earl of Derby
+[ 'George Hamilton-Gordon', 'Con', '#0087dc', new Date(1852, 11, 19), new Date(1855, 0, 31)], // , 4th Earl of Aberdeen
+[ 'Henry John Temple', 'Whig', '#ff7f00', new Date(1855, 1, 6), new Date(1858, 1, 19)], // , 3rd Viscount Palmerston
+[ 'Edward Smith-Stanley', 'Con', '#0087dc', new Date(1858, 1, 20), new Date(1859, 5, 11)], // , 14th Earl of Derby
+[ 'Henry John Temple', 'Lib', '#ffd700', new Date(1859, 5, 12), new Date(1865, 9, 18)], // , 3rd Viscount Palmerston
+[ 'John Russell', 'Lib', '#ffd700', new Date(1865, 9, 29), new Date(1866, 5, 26)],
+[ 'Edward Smith-Stanley', 'Con', '#0087dc', new Date(1866, 5, 28), new Date(1868, 1, 25)], // , 14th Earl of Derby
+[ 'Benjamin Disraeli', 'Con', '#0087dc', new Date(1868, 1, 27), new Date(1868, 11, 1)],
+[ 'William Ewart Gladstone', 'Lib', '#ffd700', new Date(1868, 11, 3), new Date(1874, 1, 17)],
+[ 'Benjamin Disraeli', 'Con', '#0087dc', new Date(1874, 1, 20), new Date(1880, 3, 21)],
+[ 'William Ewart Gladstone', 'Lib', '#ffd700', new Date(1880, 3, 23), new Date(1885, 5, 9)],
+[ 'Robert Gascoyne-Cecil', 'Con', '#0087dc', new Date(1885, 5, 23), new Date(1886, 1, 28)], // , 3rd Marquess of Salisbury
+[ 'William Ewart Gladstone', 'Lib', '#ffd700', new Date(1886, 1, 1), new Date(1886, 6, 20)],
+[ 'Robert Gascoyne-Cecil', 'Con', '#0087dc', new Date(1886, 6, 25), new Date(1892, 7, 11)], // , 3rd Marquess of Salisbury
+[ 'William Ewart Gladstone', 'Lib', '#ffd700', new Date(1892, 7, 15), new Date(1894, 2, 2)],
+[ 'Archibald Primrose', 'Lib', '#ffd700', new Date(1894, 2, 5), new Date(1895, 5, 22)], // , 5th Earl of Rosebery
+[ 'Robert Gascoyne-Cecil', 'Con', '#0087dc', new Date(1895, 5, 25), new Date(1901, 0, 22)] // , 3rd Marquess of Salisbury
+			]);
+
+			var chart = new google.visualization.Timeline(document.getElementById('timeline'));
+			chart.draw(dataTable);
+		}
+	</script>
+	<style>
+		h1 {
+			font-family: 'HelveticaNeue-Light', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+			font-weight: 100;
+		}
+	</style>
+</head>
+<body>
+	<h1>Queen Victoria's Prime Ministers</h1>
+	<div id="endFilter_div"></div>
+	<div id="timeline" style="height:1080px"></div>
+</body>
+</html>
