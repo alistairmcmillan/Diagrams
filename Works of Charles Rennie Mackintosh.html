@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>Charles Rennie Mackintosh</title>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+		google.charts.load('current', {'packages':['timeline']});
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+			var container = document.getElementById('timeline');
+			var chart = new google.visualization.Timeline(container);
+			var dataTable = new google.visualization.DataTable();
+
+			dataTable.addColumn({ type: 'string', id: 'President' });
+			dataTable.addColumn({ type: 'string', id: 'President' });
+			dataTable.addColumn({ type: 'date', id: 'Start' });
+			dataTable.addColumn({ type: 'date', id: 'End' });
+			dataTable.addRows([
+				[ 'Home', 'Glasgow', new Date(1868, 5, 7), new Date(1913, 11, 31) ],
+				[ 'Home', 'Surrey', new Date(1914, 0, 1), new Date(1922, 11, 31) ],
+				[ 'Home', 'France',  new Date(1923, 0, 1),  new Date(1926, 11, 31) ],
+				[ 'Home', 'London',  new Date(1927, 0, 1),  new Date(1928, 11, 10) ],
+				[ 'Glasgow Herald Building','Glasgow Herald Building',  new Date(1893, 0, 1),  new Date(1895, 0, 1) ],
+				[ 'BuchananSt', 'Cranston Tearoom, Buchanan St',  new Date(1896, 0, 1),  new Date(1897, 0, 1) ],
+				[ 'BuchananSt', 'Cranston Tearoom, Buchanan St',  new Date(1903, 0, 1),  new Date(1903, 0, 1) ],
+				[ 'GSOA', 'Glasgow School of Art, East',  new Date(1896, 0, 1),  new Date(1899, 0, 1) ],
+				[ 'GSOA', 'Glasgow School of Art, West',  new Date(1907, 0, 1),  new Date(1909, 0, 1) ],
+				[ 'Queen\'s Cross Church', 'Queen\'s Cross Church',  new Date(1898, 0, 1),  new Date(1899, 0, 1) ],
+				[ 'ArgyleSt', 'Cranston Tearoom, Argyle St',  new Date(1898, 0, 1),  new Date(1899, 0, 1) ],
+				[ 'ArgyleSt', 'Cranston Tearoom, Argyle St',  new Date(1905, 0, 1),  new Date(1906, 0, 1) ],
+				[ 'IngramSt', 'Cranston Tearoom, Ingram St',  new Date(1900, 0, 1),  new Date(1901, 0, 1) ],
+				[ 'Hill House', 'Hill House',  new Date(1902, 0, 1),  new Date(1904, 0, 1) ],
+				[ 'SauchiehallSt', 'Cranston Tearoom, Sauchiehall St',  new Date(1903, 0, 1),  new Date(1904, 0, 1) ],
+				[ 'Scotland Street School', 'Scotland Street School',  new Date(1903, 0, 1),  new Date(1906, 0, 1) ]
+			]);
+			var options = {
+				timeline: { showRowLabels: false }
+			};
+
+			chart.draw(dataTable, options);
+		}
+	</script>
+</head>
+<body>
+	<div id="timeline" style="height: 1000px;"></div>
+</body>
+</html>
