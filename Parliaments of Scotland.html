@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+  google.charts.load("current", {packages:["timeline"]});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var container = document.getElementById('example2.2');
+    var chart = new google.visualization.Timeline(container);
+    var dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({ type: 'string', id: 'Term' });
+    dataTable.addColumn({ type: 'string', id: 'Name' });
+    dataTable.addColumn({ type: 'date', id: 'Start' });
+    dataTable.addColumn({ type: 'date', id: 'End' });
+    dataTable.addRows([
+      [ '1', 'Scotland', new Date(843, 0, 1), new Date(2020, 11, 31) ],
+      [ '2', 'England', new Date(927, 0, 1),  new Date(2020, 11, 31) ],
+      [ '3', 'Parliament of Scotland', new Date(1235, 0, 1),  new Date(1707, 4, 1) ],
+      [ '3', 'Scottish Parliament', new Date(1999, 4, 12),  new Date(2023, 4, 16) ],
+      [ '4', 'Parliament of Great Britain', new Date(1707, 4, 1),  new Date(1800, 11, 31) ],
+      [ '5', 'Parliament of the United Kingdom', new Date(1801, 0, 1),  new Date(2023, 4, 16) ]
+    ]);
+
+    var options = {
+      timeline: { showRowLabels: false }
+    };
+
+    chart.draw(dataTable, options);
+  }
+</script>
+</head>
+<body>
+<div id="example2.2" style="height: 500px;"></div>
+</body>
+</html>
